@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:new_Theatre"
+        xmlns:viewmodels="clr-namespace:new_Theatre.VeiwModels"
+        xmlns:views="clr-namespace:new_Theatre.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
@@ -18,6 +20,12 @@
         <Style TargetType="Button">
             <Setter Property="Background" Value="#EA6A6A"/>
         </Style>
+        <DataTemplate x:Name="Main_screen_info" DataType="{x:Type viewmodels:Main_screen_info}">
+            <views:Main_screen_info DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="Adding_play" DataType="{x:Type viewmodels:Adding_play}">
+            <views:Adding_play DataContext="{Binding}"/>
+        </DataTemplate>
     </Window.Resources>
 
     
@@ -26,6 +34,7 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="369*"/>
         </Grid.RowDefinitions>
+        
         <Grid x:Name ="Header" 
               MaxHeight="50" 
               RenderTransformOrigin="0.503,1.52" 
@@ -55,8 +64,7 @@
             </StackPanel>
         </Grid>
 
-        <Grid x:Name="Main_content" Grid.Row="2">
-            
-        </Grid>
+        <ContentControl Grid.Row="2" Content="{Binding}"/>
+        
     </Grid>
 </Window>

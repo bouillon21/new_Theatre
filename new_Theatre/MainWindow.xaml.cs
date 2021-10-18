@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using new_Theatre.VeiwModels;
+
 
 namespace new_Theatre
 {
@@ -23,6 +25,7 @@ namespace new_Theatre
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new Main_screen_info();
         }
 
         private void profil_MouseDown(object sender, MouseButtonEventArgs e)
@@ -32,7 +35,7 @@ namespace new_Theatre
 
         private void Main_screen_transfer_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("main");
+            DataContext = new Main_screen_info();
         }
 
         private void Plays_transfer_MouseDown(object sender, MouseButtonEventArgs e)
@@ -42,7 +45,7 @@ namespace new_Theatre
 
         private void Adding_play_transfer_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("Adding a Play");
+            DataContext = new Adding_play();
         }
     }
 }
