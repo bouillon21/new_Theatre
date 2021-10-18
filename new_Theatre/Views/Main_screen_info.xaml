@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:new_Theatre.Views"
+             xmlns:prop="clr-namespace:new_Theatre.Resources"
+             
              mc:Ignorable="d" 
              d:DesignHeight="369" d:DesignWidth="792">
     <Grid Background="#79BDA5">
@@ -11,7 +13,8 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Image></Image>
+        <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                   Text="{x:Static prop:BaseResource.Description_theater}"/>
+        <Image Source="/Resources/KAI.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Width="275" Height="180" Stretch="Fill"/>
     </Grid>
 </UserControl>
