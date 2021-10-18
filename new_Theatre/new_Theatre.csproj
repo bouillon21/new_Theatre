@@ -123,5 +123,8 @@
   <ItemGroup>
     <Resource Include="Resources\KAI.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\схема_классов2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
