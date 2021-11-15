@@ -46,6 +46,10 @@ namespace new_Theatre.Views
                 db.SaveChanges();
                 MessageBox.Show("done");
             }
+            else
+            {
+                MessageBox.Show("no all data");
+            }
         }
     }
 }

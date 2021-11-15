@@ -17,10 +17,10 @@
           <Key>
             <PropertyRef Name="id_performance" />
           </Key>
-          <Property Name="id_performance" Type="int" Nullable="false" />
+          <Property Name="id_performance" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="text" Nullable="false" />
           <Property Name="Address" Type="text" />
-          <Property Name="Time" Type="time" Precision="7" />
+          <Property Name="Time" Type="date" />
           <Property Name="Cost" Type="int" />
           <Property Name="id_author" Type="int" />
         </EntityType>
@@ -84,10 +84,10 @@
           <Key>
             <PropertyRef Name="id_performance" />
           </Key>
-          <Property Name="id_performance" Type="Int32" Nullable="false" />
+          <Property Name="id_performance" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
-          <Property Name="Time" Type="Time" Precision="7" />
+          <Property Name="Time" Type="DateTime" Precision="0" />
           <Property Name="Cost" Type="Int32" />
           <Property Name="id_author" Type="Int32" />
           <NavigationProperty Name="Author" Relationship="Self.FK_Performance_Author" FromRole="Performance" ToRole="Author" />

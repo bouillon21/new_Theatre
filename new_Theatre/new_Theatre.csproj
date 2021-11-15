@@ -66,34 +66,34 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Author.cs">
-      <DependentUpon>TheatreData.tt</DependentUpon>
+      <DependentUpon>Theatre.tt</DependentUpon>
     </Compile>
     <Compile Include="Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
     </Compile>
     <Compile Include="Performance.cs">
-      <DependentUpon>TheatreData.tt</DependentUpon>
+      <DependentUpon>Theatre.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>TheatreData.tt</DependentUpon>
+      <DependentUpon>Theatre.tt</DependentUpon>
     </Compile>
-    <Compile Include="TheatreData.Context.cs">
+    <Compile Include="Theatre.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TheatreData.Context.tt</DependentUpon>
+      <DependentUpon>Theatre.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TheatreData.cs">
+    <Compile Include="Theatre.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TheatreData.tt</DependentUpon>
+      <DependentUpon>Theatre.tt</DependentUpon>
     </Compile>
-    <Compile Include="TheatreData.Designer.cs">
+    <Compile Include="Theatre.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TheatreData.edmx</DependentUpon>
+      <DependentUpon>Theatre.edmx</DependentUpon>
     </Compile>
     <Compile Include="Users.cs">
-      <DependentUpon>TheatreData.tt</DependentUpon>
+      <DependentUpon>Theatre.tt</DependentUpon>
     </Compile>
     <Compile Include="VeiwModels\Plays.cs" />
     <Compile Include="VeiwModels\Registration.cs" />
@@ -188,12 +188,12 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="TheatreData.edmx">
+    <EntityDeploy Include="Theatre.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TheatreData.Designer.cs</LastGenOutput>
+      <LastGenOutput>Theatre.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="TheatreData.edmx.diagram">
-      <DependentUpon>TheatreData.edmx</DependentUpon>
+    <None Include="Theatre.edmx.diagram">
+      <DependentUpon>Theatre.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -208,15 +208,17 @@
   <ItemGroup>
     <Resource Include="Resources\add_image.png" />
     <Resource Include="Resources\Лебединое озеро.jpg" />
-    <Content Include="TheatreData.Context.tt">
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Theatre.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TheatreData.edmx</DependentUpon>
-      <LastGenOutput>TheatreData.Context.cs</LastGenOutput>
+      <DependentUpon>Theatre.edmx</DependentUpon>
+      <LastGenOutput>Theatre.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="TheatreData.tt">
+    <Content Include="Theatre.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TheatreData.edmx</DependentUpon>
-      <LastGenOutput>TheatreData.cs</LastGenOutput>
+      <DependentUpon>Theatre.edmx</DependentUpon>
+      <LastGenOutput>Theatre.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -20,25 +20,25 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Height="290" Width="240">
+                    <Grid Height="auto"  MinHeight="290" Width="240" Background="#5F586C">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="17*"/>
                             <RowDefinition Height="8*"/>
                         </Grid.RowDefinitions>
                         <Image Source="/Resources/KAI.jpg" Grid.Row="0" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-                        <Grid Background="#5F586C" Grid.Row="1">
+                        <Grid Grid.Row="1" Margin="10">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="44*"/>
+                                <RowDefinition Height="auto"/>
                                 <RowDefinition Height="21*"/>
                             </Grid.RowDefinitions>
-                            <Button Style="{StaticResource ListPays}" Height="15" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" Grid.Row="1"/>
-                            <Grid>
+                            <Button Style="{StaticResource ListPays}" FontSize="10" Content="Просмотр" Height="15" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" Grid.Row="1"/>
+                            <Grid Grid.Row="0">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
                                 </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" FontSize="10" Foreground="White" Text="{Binding Title}" Width="100" Height="15" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Row="0" FontSize="10" TextWrapping="Wrap" Foreground="White" Text="{Binding Title}" Width="100" Height="auto" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                 <Label Grid.Row="0" Content="Название" HorizontalAlignment="Left" FontSize="10" VerticalAlignment="Center"/>
                                 <TextBlock Grid.Row="1" FontSize="10" Foreground ="White" Text="{Binding Cost}" Width="100" Height="15" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                 <Label Grid.Row="1" Content="Цена" HorizontalAlignment="Left" FontSize="10" VerticalAlignment="Center"/>

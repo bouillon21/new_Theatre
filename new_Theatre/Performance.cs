@@ -17,7 +17,7 @@ namespace new_Theatre
         public int id_performance { get; set; }
         public string Title { get; set; }
         public string Address { get; set; }
-        public Nullable<DateTime> Time { get; set; }
+        public Nullable<System.DateTime> Time { get; set; }
         public Nullable<int> Cost { get; set; }
         public Nullable<int> id_author { get; set; }
     
@@ -28,7 +28,7 @@ namespace new_Theatre
 
         }
 
-        public Performance(string Title, DateTime time , int Cost)
+        public Performance(string Title, DateTime time, int Cost)
         {
             this.Title = Title;
             this.Address = "Большая красная 7";
