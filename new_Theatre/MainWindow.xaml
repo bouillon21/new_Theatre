@@ -18,12 +18,15 @@
         <DataTemplate x:Name="Registration" DataType="{x:Type viewmodels:Registration}">
             <views:Registration DataContext="{Binding}"/>
         </DataTemplate>
+        <DataTemplate x:Name="Plays1" DataType="{x:Type viewmodels:Plays}">
+            <views:Plays DataContext="{Binding}"/>
+        </DataTemplate>
     </Window.Resources>
 
     <Grid MinHeight="419">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"/>
-            <RowDefinition Height="369*"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Grid x:Name ="Header" 

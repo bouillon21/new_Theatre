@@ -45,7 +45,7 @@ namespace new_Theatre
 
         private void Plays_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Plays");
+            DataContext = new Plays();
         }
     }
 }

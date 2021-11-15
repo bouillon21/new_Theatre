@@ -24,5 +24,28 @@ namespace new_Theatre.Views
         {
             InitializeComponent();
         }
+
+        TheatreEntities db = new TheatreEntities();
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            calendar.Visibility = Visibility.Visible;
+        }
+
+        private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            calendar.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (Title.Text != "" && Data.Text != "" && Price.Text != "" && Description.Text != "")
+            {
+                Performance play = new Performance(Title.Text, Convert.ToDateTime(Data.Text), Convert.ToInt32(Price.Text));
+                db.Performance.Add(play);
+                db.SaveChanges();
+                MessageBox.Show("done");
+            }
+        }
     }
 }

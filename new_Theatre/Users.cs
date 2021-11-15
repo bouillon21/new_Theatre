@@ -19,5 +19,19 @@ namespace new_Theatre
         public string Phone { get; set; }
         public Nullable<bool> is_Admin { get; set; }
         public int id_user { get; set; }
+
+        public Users(string Login, string Password, string Phone, bool is_Admin)
+        {
+            this.Login = Login;
+            this.Password = Password;
+            this.Phone = Phone;
+            this.is_Admin = is_Admin;
+        }
+
+        public Users()
+        {
+
+        }
     }
+
 }

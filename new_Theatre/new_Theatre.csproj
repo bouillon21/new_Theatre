@@ -68,6 +68,9 @@
     <Compile Include="Author.cs">
       <DependentUpon>TheatreData.tt</DependentUpon>
     </Compile>
+    <Compile Include="Calendar.xaml.cs">
+      <DependentUpon>Calendar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Performance.cs">
       <DependentUpon>TheatreData.tt</DependentUpon>
     </Compile>
@@ -92,6 +95,7 @@
     <Compile Include="Users.cs">
       <DependentUpon>TheatreData.tt</DependentUpon>
     </Compile>
+    <Compile Include="VeiwModels\Plays.cs" />
     <Compile Include="VeiwModels\Registration.cs" />
     <Compile Include="Views\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
@@ -110,9 +114,16 @@
     <Compile Include="Views\Main_screen_info.xaml.cs">
       <DependentUpon>Main_screen_info.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Plays.xaml.cs">
+      <DependentUpon>Plays.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Page Include="Calendar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Authorization.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -138,6 +149,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Main_screen_info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Plays.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -191,6 +206,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\add_image.png" />
+    <Resource Include="Resources\Лебединое озеро.jpg" />
     <Content Include="TheatreData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TheatreData.edmx</DependentUpon>

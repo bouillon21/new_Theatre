@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="new_Theatre.Views.Plays"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:new_Theatre.Views"
+             mc:Ignorable="d" 
+             MinHeight="369"
+             MinWidth="792"
+             Height="auto"
+             Width="auto" 
+             d:DesignHeight="369"
+             d:DesignWidth="792">
+    <Grid Background="#79BDA5">
+        <ListView x:Name="ListPlays" Background="#79BDA5" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="10">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Height="290" Width="240">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="17*"/>
+                            <RowDefinition Height="8*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="/Resources/KAI.jpg" Grid.Row="0" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Grid Background="#5F586C" Grid.Row="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="44*"/>
+                                <RowDefinition Height="21*"/>
+                            </Grid.RowDefinitions>
+                            <Button Style="{StaticResource ListPays}" Height="15" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" Grid.Row="1"/>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Grid.Row="0" FontSize="10" Foreground="White" Text="{Binding Title}" Width="100" Height="15" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <Label Grid.Row="0" Content="Название" HorizontalAlignment="Left" FontSize="10" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Row="1" FontSize="10" Foreground ="White" Text="{Binding Cost}" Width="100" Height="15" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                <Label Grid.Row="1" Content="Цена" HorizontalAlignment="Left" FontSize="10" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>
+    

@@ -29,5 +29,13 @@ namespace new_Theatre
         public virtual DbSet<Performance> Performance { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
+
+        private static TheatreEntities _context;
+        public static TheatreEntities GetContext()
+        {
+            if (_context == null)
+                _context = new TheatreEntities();
+            return _context;
+        }
     }
 }

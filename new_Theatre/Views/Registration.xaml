@@ -34,10 +34,10 @@
                 <TextBox x:Name="Login" Grid.Row="0" Grid.Column="1"/>
                 <PasswordBox x:Name="Password" Grid.Row="1" Grid.Column="1"/>
                 
-                <Label Grid.Row="0" Grid.Column="2" Content="Login" Foreground="Black"/>
-                <Label Grid.Row="1" Grid.Column="2" Content="Password" Foreground="Black"/>
-                <TextBox Grid.Row="0" Grid.Column="3"/>
-                <PasswordBox Grid.Row="1" Grid.Column="3"/>
+                <Label Grid.Row="0" Grid.Column="2" Content="Phone" Foreground="Black"/>
+                <Label Grid.Row="1" Grid.Column="2" Content="Admin" Foreground="Black"/>
+                <TextBox x:Name="Phone" Grid.Row="0" Grid.Column="3"/>
+                <CheckBox x:Name="Admin" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Grid>
         </StackPanel>
         <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
