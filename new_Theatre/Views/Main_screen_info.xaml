@@ -6,15 +6,18 @@
              xmlns:local="clr-namespace:new_Theatre.Views"
              xmlns:prop="clr-namespace:new_Theatre.Resources"
              
-             mc:Ignorable="d" 
-             d:DesignHeight="369" d:DesignWidth="792">
+             mc:Ignorable="d"
+             MinHeight="369"
+             MinWidth="792"
+             Height="auto"
+             Width="auto">
     <Grid Background="#79BDA5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" 
-                   Text="{x:Static prop:BaseResource.Description_theater}"/>
-        <Image Source="/Resources/KAI.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Width="275" Height="180" Stretch="Fill"/>
+        <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"
+                   Text="{x:Static prop:BaseResource.Description_theater}" FontSize="20"/>
+        <Image Source="/Resources/KAI.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15"/>
     </Grid>
 </UserControl>

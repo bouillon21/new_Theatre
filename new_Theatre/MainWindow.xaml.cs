@@ -25,27 +25,27 @@ namespace new_Theatre
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new Main_screen_info();
+            DataContext = new Authorization();
         }
 
         private void profil_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("test");
+            DataContext = new Authorization();
         }
 
-        private void Main_screen_transfer_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Main_screen_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new Main_screen_info();
         }
 
-        private void Plays_transfer_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MessageBox.Show("Plays");
-        }
-
-        private void Adding_play_transfer_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Adding_a_Play_Click(object sender, RoutedEventArgs e)
         {
             DataContext = new Adding_play();
+        }
+
+        private void Plays_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Plays");
         }
     }
 }

@@ -35,9 +35,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,12 +65,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Author.cs">
+      <DependentUpon>TheatreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Performance.cs">
+      <DependentUpon>TheatreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>TheatreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TheatreData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TheatreData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TheatreData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TheatreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TheatreData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TheatreData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>TheatreData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VeiwModels\Registration.cs" />
+    <Compile Include="Views\Authorization.xaml.cs">
+      <DependentUpon>Authorization.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\BaseResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseResource.resx</DependentUpon>
     </Compile>
     <Compile Include="VeiwModels\Adding_play.cs" />
+    <Compile Include="VeiwModels\Authorization.cs" />
     <Compile Include="VeiwModels\Main_screen_info.cs" />
     <Compile Include="Views\Adding_play.xaml.cs">
       <DependentUpon>Adding_play.xaml</DependentUpon>
@@ -69,6 +110,13 @@
     <Compile Include="Views\Main_screen_info.xaml.cs">
       <DependentUpon>Main_screen_info.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Registration.xaml.cs">
+      <DependentUpon>Registration.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\Authorization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,11 +129,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ResDictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Adding_play.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Main_screen_info.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Registration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -112,9 +168,17 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>BaseResource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="TheatreData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TheatreData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TheatreData.edmx.diagram">
+      <DependentUpon>TheatreData.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -124,7 +188,19 @@
     <Resource Include="Resources\KAI.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\схема_классов2.png" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TheatreData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TheatreData.edmx</DependentUpon>
+      <LastGenOutput>TheatreData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="TheatreData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TheatreData.edmx</DependentUpon>
+      <LastGenOutput>TheatreData.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

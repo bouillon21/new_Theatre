@@ -7,44 +7,35 @@
         xmlns:viewmodels="clr-namespace:new_Theatre.VeiwModels"
         xmlns:views="clr-namespace:new_Theatre.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MinWidth="792" MinHeight="450">
     <Window.Resources>
-        <Style TargetType="TextBlock" x:Key="Header">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-            <Setter Property="Height" Value="18"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="10,0,0,0"/>
-        </Style>
-        <Style TargetType="Button">
-            <Setter Property="Background" Value="#EA6A6A"/>
-        </Style>
         <DataTemplate x:Name="Main_screen_info" DataType="{x:Type viewmodels:Main_screen_info}">
             <views:Main_screen_info DataContext="{Binding}"/>
         </DataTemplate>
         <DataTemplate x:Name="Adding_play" DataType="{x:Type viewmodels:Adding_play}">
             <views:Adding_play DataContext="{Binding}"/>
         </DataTemplate>
+        <DataTemplate x:Name="Registration" DataType="{x:Type viewmodels:Registration}">
+            <views:Registration DataContext="{Binding}"/>
+        </DataTemplate>
     </Window.Resources>
 
-    
     <Grid MinHeight="419">
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="369*"/>
         </Grid.RowDefinitions>
-        
+
         <Grid x:Name ="Header" 
-              MaxHeight="50" 
-              RenderTransformOrigin="0.503,1.52" 
+              MaxHeight="50"
+              MinWidth="792"
               VerticalAlignment="Top" 
               Background="#FF5F586C" 
               Height="50">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="130*"/>
+                <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="455*"/>
-                <ColumnDefinition Width="207*"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
             <StackPanel x:Name="profil" 
@@ -54,17 +45,16 @@
                         MinHeight="50" 
                         MaxHeight="50">
                 <Ellipse Height="30" Width="30" Fill="White" Margin="15,10,5,10" />
-                <TextBlock x:Name="Name" Width="76" TextAlignment="Center" FontSize="18" Margin="0,10" Foreground="White"><Run Text="Name"/></TextBlock>
+                <Label x:Name="Name" Content="Name" Width="76" Margin="15,0,0,0"/>
             </StackPanel>
 
-            <StackPanel Grid.Column="2" Orientation="Horizontal">
-                <TextBlock x:Name="Main_screen_transfer"    Text="Main screen"     Style="{StaticResource Header}" MouseDown="Main_screen_transfer_MouseDown"/>
-                <TextBlock x:Name="Plays_transfer"          Text="Plays"           Style="{StaticResource Header}" MouseDown="Plays_transfer_MouseDown"/>
-                <TextBlock x:Name="Adding_play_transfer"    Text="Adding a Play"   Style="{StaticResource Header}" MouseDown="Adding_play_transfer_MouseDown"/>
-            </StackPanel>
+            <Menu Grid.Column="2" Margin="15,0">
+                <MenuItem x:Name="Main_screen" Header="Main screen" Click="Main_screen_Click"/>
+                <MenuItem x:Name="Plays" Header="Plays" Click="Plays_Click"/>
+                <MenuItem x:Name="Adding_a_Play" Header="Adding a Play" Click="Adding_a_Play_Click"/>
+            </Menu>
         </Grid>
-
-        <ContentControl Grid.Row="2" Content="{Binding}"/>
-        
+        <ContentControl x:Name="MainContent" Grid.Row="2" Content="{Binding}"/>
     </Grid>
 </Window>
+    
