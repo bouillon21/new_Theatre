@@ -9,12 +9,23 @@
              MinWidth="792"
              Height="auto"
              Width="auto" 
-             d:DesignHeight="369"
-             d:DesignWidth="792"
+                     xmlns:viewmodels="clr-namespace:new_Theatre.VeiwModels"
+        xmlns:views="clr-namespace:new_Theatre.Views"
              >
+    <UserControl.Resources>
+        <DataTemplate x:Name="Main_screen_info" DataType="{x:Type viewmodels:Main_screen_info}">
+            <views:Main_screen_info DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="Adding_play" DataType="{x:Type viewmodels:Adding_play}">
+            <views:Adding_play DataContext="{Binding}"/>
+        </DataTemplate>
+        <DataTemplate x:Name="Registration" DataType="{x:Type viewmodels:Registration}">
+            <views:Registration DataContext="{Binding}"/>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid Background="#79BDA5">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" MinHeight="200"/>
+            <RowDefinition Height="*" MinHeight="200"/>
             <RowDefinition Height="auto" MinHeight="169"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -40,7 +51,7 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Button Grid.Row="0" Content="Войти" Click="Button_Click"/>
-                <Button Command="{Binding DataContext.GetOrderCommand, RelativeSource={RelativeSource AncestorType=local:MainWindow}}" Grid.Row="1" Content="Зарегистрироваться" Click="Button_Click_1"/>
+                <Button Grid.Row="1" Content="Зарегистрироваться" Click="Button_Click_1"/>
             </Grid>
         </StackPanel>
     </Grid>

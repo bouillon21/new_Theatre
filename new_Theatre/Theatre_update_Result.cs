@@ -10,9 +10,8 @@
 namespace new_Theatre
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Author
+    public partial class Theatre_update_Result
     {
         public int ID_author { get; set; }
         public string Name { get; set; }

@@ -21,6 +21,7 @@ namespace new_Theatre
     /// </summary>
     public partial class Authorization : UserControl
     {
+        static public object frameworkElement;
         public Authorization()
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace new_Theatre
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            DataContext = new Registration();
+            frameworkElement = new Registration();
         }
     }
 }

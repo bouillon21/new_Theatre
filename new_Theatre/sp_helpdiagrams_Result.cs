@@ -10,11 +10,13 @@
 namespace new_Theatre
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Author
+    public partial class sp_helpdiagrams_Result
     {
-        public int ID_author { get; set; }
+        public string Database { get; set; }
         public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

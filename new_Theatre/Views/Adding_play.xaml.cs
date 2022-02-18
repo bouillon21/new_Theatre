@@ -39,17 +39,17 @@ namespace new_Theatre.Views
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (Title.Text != "" && Data.Text != "" && Price.Text != "" && Description.Text != "")
-            {
-                Performance play = new Performance(Title.Text, Convert.ToDateTime(Data.Text), Convert.ToInt32(Price.Text));
-                db.Performance.Add(play);
-                db.SaveChanges();
-                MessageBox.Show("done");
-            }
-            else
-            {
-                MessageBox.Show("no all data");
-            }
+            //if (Title.Text != "" && Data.Text != "" && Price.Text != "" && Description.Text != "")
+            //{
+            //    Performance play = new Performance(Title.Text, Convert.ToDateTime(Data.Text), Convert.ToInt32(Price.Text));
+            //    db.Performance.Add(play);
+            //    db.SaveChanges();
+            //    MessageBox.Show("done");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("no all data");
+            //}
         }
     }
 }

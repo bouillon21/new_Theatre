@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace new_Theatre.VeiwModels
 {
-    class Registration
+    public class Registration
     {
     }
 }

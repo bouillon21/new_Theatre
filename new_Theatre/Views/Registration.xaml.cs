@@ -29,25 +29,25 @@ namespace new_Theatre.Views
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (Login.Text != "" && Password.Password != "")
-            {
-                foreach (var User in db.Users)
-                {
-                    if (User.Login == Login.Text)
-                    {
-                        MessageBox.Show("Error: the user exists ");
-                        return;
-                    }
-                }
-                Users user = new Users(Login.Text, Password.Password, Phone.Text, Admin.IsChecked.Value);
-                db.Users.Add(user);
-                db.SaveChanges();
-                MessageBox.Show("done");
-            }
-            else
-            {
-                MessageBox.Show("no all data");
-            }
+            //if (Login.Text != "" && Password.Password != "")
+            //{
+            //    foreach (var User in db.Users)
+            //    {
+            //        if (User.Login == Login.Text)
+            //        {
+            //            MessageBox.Show("Error: the user exists ");
+            //            return;
+            //        }
+            //    }
+            //    Users user = new Users(Login.Text, Password.Password, Phone.Text, Admin.IsChecked.Value);
+            //    db.Users.Add(user);
+            //    db.SaveChanges();
+            //    MessageBox.Show("done");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("no all data");
+            //}
 
         }
     }

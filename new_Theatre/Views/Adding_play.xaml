@@ -8,13 +8,11 @@
              MinHeight="369"
              MinWidth="792"
              Height="auto"
-             Width="auto" 
-             d:DesignHeight="369"
-             d:DesignWidth="792">
+             Width="auto" >
     <Grid Background="#79BDA5">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="263*"/>
-            <ColumnDefinition Width="529*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0" >
             <Grid.RowDefinitions>
@@ -24,10 +22,12 @@
             <Image Grid.Row="0" Width="200" Height="200" Source="/Resources/add_image.png"/>
             <Button Grid.Row="1" Content="Add play" Click="Button_Click_1"/>
         </Grid>
-        <Grid Grid.Column="1" Margin="15" >
+        <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="153*"/>
-                <ColumnDefinition Width="377*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"/>
@@ -37,17 +37,23 @@
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Content="Название"/>
             <Label Grid.Row="1" Grid.Column="0" Content="Дата"/>
-            <Label Grid.Row="2" Grid.Column="0" Content="Цена"/>
+            <Label Grid.Row="1" Grid.Column="2" Content="Время"/>
+            <Label Grid.Row="2" Grid.Column="0" Content="Адрес"/>
+            <Label Grid.Row="2" Grid.Column="2" Content="Количество мест"/>
+            <Label Grid.Row="0" Grid.Column="2" Content="Цена"/>
             <Label Grid.Row="3" Grid.Column="0" Content="Описание"/>
 
-            <TextBox x:Name="Title" Grid.Row="0" Grid.Column="1" Width="Auto" TextWrapping="Wrap"/>
+            <TextBox x:Name="Title" Grid.Row="0" Grid.Column="1"  TextWrapping="Wrap" HorizontalAlignment="Left" MinWidth="230"/>
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                <TextBox x:Name="Data" Grid.Row="1" Grid.Column="1" Width="150" HorizontalAlignment="Left"
+                <TextBox x:Name="Data" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"
                          Text ="{Binding ElementName=calendar, Path=SelectedDate, StringFormat=dd/MM/yyyy, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
-                <Button Grid.Row="1" Grid.Column="1" Content="Выбрать дату" Click="Button_Click" HorizontalAlignment="Right" Width="150"/>
+                <Button Grid.Row="1" Grid.Column="1" Content="Выбрать дату" Click="Button_Click" HorizontalAlignment="Right" Width="100"/>
             </StackPanel>
-            <TextBox x:Name="Price" Grid.Row="2" Grid.Column="1" Width="Auto" TextWrapping="Wrap"/>
-            <TextBox x:Name="Description" Grid.Row="3" Grid.Column="1" Width="Auto" Height="Auto" TextWrapping="Wrap"/>
+            <TextBox Grid.Row="1" Grid.Column="3" TextWrapping="Wrap"/>
+            <TextBox Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+            <TextBox Grid.Row="2" Grid.Column="3" TextWrapping="Wrap"/>
+            <TextBox x:Name="Price" Grid.Row="0" Grid.Column="3" Width="Auto" TextWrapping="Wrap"/>
+            <TextBox x:Name="Description" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" Height="Auto" TextWrapping="Wrap" HorizontalAlignment="Left" Width="530"/>
         </Grid>
         <Calendar x:Name="calendar" Grid.Column="1" Margin="115,57,54,97" Visibility="Collapsed" SelectedDatesChanged="calendar_SelectedDatesChanged"/>
     </Grid>

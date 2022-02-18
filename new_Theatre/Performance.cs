@@ -14,27 +14,21 @@ namespace new_Theatre
     
     public partial class Performance
     {
-        public int id_performance { get; set; }
-        public string Title { get; set; }
-        public string Address { get; set; }
-        public Nullable<System.DateTime> Time { get; set; }
-        public Nullable<int> Cost { get; set; }
-        public Nullable<int> id_author { get; set; }
-    
-        public virtual Author Author { get; set; }
-
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Performance()
         {
-
+            this.PurchasedTickets = new HashSet<PurchasedTickets>();
         }
-
-        public Performance(string Title, DateTime time, int Cost)
-        {
-            this.Title = Title;
-            this.Address = "Большая красная 7";
-            this.Cost = Cost;
-            this.id_author = 1;
-            this.Time = time;
-        }
+    
+        public int ID_performance { get; set; }
+        public string Title { get; set; }
+        public string Address { get; set; }
+        public System.DateTime Time { get; set; }
+        public double Cost { get; set; }
+        public int ID_author { get; set; }
+        public int Number_places { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PurchasedTickets> PurchasedTickets { get; set; }
     }
 }

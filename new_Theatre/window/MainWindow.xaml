@@ -7,7 +7,7 @@
         xmlns:viewmodels="clr-namespace:new_Theatre.VeiwModels"
         xmlns:views="clr-namespace:new_Theatre.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinWidth="792" MinHeight="450">
+        Title="MainWindow" Height="auto" Width="auto" MinWidth="792" MinHeight="450">
     <Window.Resources>
         <DataTemplate x:Name="Main_screen_info" DataType="{x:Type viewmodels:Main_screen_info}">
             <views:Main_screen_info DataContext="{Binding}"/>
@@ -37,7 +37,7 @@
               Height="50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="455*"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 

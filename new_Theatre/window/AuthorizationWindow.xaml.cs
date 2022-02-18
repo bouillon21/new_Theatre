@@ -12,16 +12,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace new_Theatre
+namespace new_Theatre.window
 {
     /// <summary>
-    /// Логика взаимодействия для Calendar.xaml
+    /// Логика взаимодействия для AuthorizationWindow.xaml
     /// </summary>
-    public partial class Calendar : Window
+    public partial class AuthorizationWindow : Window
     {
-        public Calendar()
+        public AuthorizationWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

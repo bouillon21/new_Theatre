@@ -12,23 +12,14 @@ namespace new_Theatre
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class PurchasedTickets
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
-        {
-            this.PurchasedTickets = new HashSet<PurchasedTickets>();
-        }
-    
+        public int ID_tickets { get; set; }
+        public string Place { get; set; }
         public int ID_user { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public string Name { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public bool is_Admin { get; set; }
+        public int ID_performance { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PurchasedTickets> PurchasedTickets { get; set; }
+        public virtual Performance Performance { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

@@ -25,7 +25,8 @@ namespace new_Theatre
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new Authorization();
+            DataContext = new Registration();
+            Authorization.frameworkElement = DataContext;
         }
 
         private void profil_MouseDown(object sender, MouseButtonEventArgs e)

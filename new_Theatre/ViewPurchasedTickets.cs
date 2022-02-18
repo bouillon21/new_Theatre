@@ -12,9 +12,13 @@ namespace new_Theatre
     using System;
     using System.Collections.Generic;
     
-    public partial class Author
+    public partial class ViewPurchasedTickets
     {
-        public int ID_author { get; set; }
+        public int ID_tickets { get; set; }
         public string Name { get; set; }
+        public string Title { get; set; }
+        public string Address { get; set; }
+        public System.DateTime Time { get; set; }
+        public double Cost { get; set; }
     }
 }
