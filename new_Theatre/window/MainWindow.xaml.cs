@@ -22,9 +22,10 @@ namespace new_Theatre
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(string login)
         {
             InitializeComponent();
+            Login.Content = login;
             DataContext = new Registration();
             Authorization.frameworkElement = DataContext;
         }

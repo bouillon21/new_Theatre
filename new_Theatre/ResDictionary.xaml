@@ -2,9 +2,9 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:new_Theatre">
 
-
     <Style TargetType="Menu">
         <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Background" Value="{x:Null}"/>
@@ -12,18 +12,21 @@
 
     <Style TargetType="Label">
         <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
     <Style TargetType="TextBox">
-        <Setter Property="Width" Value="100"/>
+        <Setter Property="Width" Value="150"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="Margin" Value="15"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
-                    <Border CornerRadius="3" Background="#FFD4D4D4">
+                    <Border CornerRadius="3" Background="#FF59595A">
                         <ScrollViewer x:Name="PART_ContentHost"
                             HorizontalAlignment="Left" 
                             VerticalAlignment="Center"/>
@@ -31,16 +34,24 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter Property="CaretBrush" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
+ 
+
     <Style TargetType="PasswordBox">
-        <Setter Property="Width" Value="100"/>
+        <Setter Property="Width" Value="150"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="Margin" Value="15"/>
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="PasswordBox">
-                    <Border CornerRadius="3" Background="#FFD4D4D4">
+                    <Border CornerRadius="3" Background="#FF59595A">
                         <ScrollViewer x:Name="PART_ContentHost"
                             HorizontalAlignment="Left" 
                             VerticalAlignment="Center"/>
@@ -48,6 +59,11 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter Property="CaretBrush" Value="White"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style TargetType="Button" x:Key="BaseButton">
@@ -55,10 +71,12 @@
         <Setter Property="Width" Value="200"/>
         <Setter Property="Height" Value="40"/>
         <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontFamily" Value="Cascadia Code"/>
+
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Border CornerRadius="3" Background="#FF976AEA">
+                    <Border CornerRadius="3" Background="#5F2580">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -72,7 +90,7 @@
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
-                            <Border CornerRadius="3" Background="#5F586C">
+                            <Border CornerRadius="3" Background="#412C84">
                                 <ContentPresenter HorizontalAlignment="Center"
                                     VerticalAlignment="Center"/>
                             </Border>

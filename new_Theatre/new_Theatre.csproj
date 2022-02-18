@@ -235,6 +235,7 @@
     <Resource Include="Resources\Лебединое озеро.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resources\theater.png" />
     <Content Include="TheatreModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TheatreModel.edmx</DependentUpon>

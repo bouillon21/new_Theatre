@@ -5,30 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:new_Theatre.window"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" >
-    <Grid Background="#FF252526">
-
+        Title="Авторизация"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight" 
+        MinHeight="400" MinWidth="240"
+        Background="#FF252526" Icon="/Resources/theater.png">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto" MinHeight="200"/>
-            <RowDefinition Height="auto" MinHeight="180"/>
+            <RowDefinition Height="*" MinHeight="200"/>
+            <RowDefinition Height="*" MinHeight="180"/>
         </Grid.RowDefinitions>
-        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="20,0,0,0">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" MinHeight="50"/>
                     <RowDefinition Height="*" MinHeight="50"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Content="Login" />
-                <Label Grid.Row="1" Grid.Column="0" Content="Password"/>
+                <Label Grid.Row="0" Grid.Column="0" Content="Логин"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="Пароль"/>
                 <TextBox x:Name="Login" Grid.Row="0" Grid.Column="1"/>
                 <PasswordBox x:Name="Password" Grid.Row="1" Grid.Column="1"/>
             </Grid>
         </StackPanel>
-        <StackPanel Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Height="140" Width="230" Grid.ColumnSpan="2">
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>

@@ -23,5 +23,10 @@ namespace new_Theatre.window
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

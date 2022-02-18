@@ -26,12 +26,16 @@ namespace new_Theatre.window
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow win = new MainWindow(Login.Text);
+            win.Show();
+            this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            RegistrationWindow win = new RegistrationWindow();
+            win.Show();
+            this.Close();
         }
     }
 }
