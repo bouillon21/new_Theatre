@@ -20,9 +20,6 @@
         <DataTemplate x:Name="Adding_play" DataType="{x:Type viewmodels:Adding_play}">
             <views:Adding_play DataContext="{Binding}"/>
         </DataTemplate>
-        <DataTemplate x:Name="Registration" DataType="{x:Type viewmodels:Registration}">
-            <views:Registration DataContext="{Binding}"/>
-        </DataTemplate>
         <DataTemplate x:Name="Plays1" DataType="{x:Type viewmodels:Plays}">
             <views:Plays DataContext="{Binding}"/>
         </DataTemplate>

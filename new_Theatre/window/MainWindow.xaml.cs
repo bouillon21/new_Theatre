@@ -27,7 +27,6 @@ namespace new_Theatre
             InitializeComponent();
             Login.Content = login;
             DataContext = new Main_screen_info();
-            Authorization.frameworkElement = DataContext;
         }
 
         private void profil_MouseDown(object sender, MouseButtonEventArgs e)
