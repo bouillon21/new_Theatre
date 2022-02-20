@@ -11,8 +11,11 @@
              Width="auto" 
              d:DesignHeight="369"
              d:DesignWidth="792">
-    <Grid Background="#79BDA5">
-        <ListView x:Name="ListPlays" Background="#79BDA5" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="10">
+    <Grid>
+        <ListView x:Name="ListPlays"
+                  Margin="10" Background="{x:Null}"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" BorderBrush="{x:Null}">
+            
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left"/>
@@ -20,29 +23,41 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Height="auto"  MinHeight="290" Width="240" Background="#5F586C">
+                    <Grid Height="auto" MinHeight="290" Width="250" Background="#9B59C0">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="17*"/>
                             <RowDefinition Height="8*"/>
                         </Grid.RowDefinitions>
-                        <Image Source="/Resources/KAI.jpg" Grid.Row="0" Stretch="Uniform" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+                        <Image Source="/Resources/KAI.jpg" Grid.Row="0" Stretch="Uniform" 
+               HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
                         <Grid Grid.Row="1" Margin="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="auto"/>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="21*"/>
                             </Grid.RowDefinitions>
-                            <Button Style="{StaticResource ListPays}" FontSize="10" Content="Просмотр" Height="15" Width="50" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,5,0" Grid.Row="1"/>
-                            <Grid Grid.Row="0">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="auto"/>
-                                    <RowDefinition Height="auto"/>
-                                </Grid.RowDefinitions>
-                                <TextBlock Grid.Row="0" FontSize="10" TextWrapping="Wrap" Foreground="White" Text="{Binding Title}" Width="100" Height="auto" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                                <Label Grid.Row="0" Content="Название" HorizontalAlignment="Left" FontSize="10" VerticalAlignment="Center"/>
-                                <TextBlock Grid.Row="1" FontSize="10" Foreground ="White" Text="{Binding Cost}" Width="100" Height="15" HorizontalAlignment="Right" VerticalAlignment="Center"/>
-                                <Label Grid.Row="1" Content="Цена" HorizontalAlignment="Left" FontSize="10" VerticalAlignment="Center"/>
-                            </Grid>
+
+                            <Label Grid.Row="0" Grid.Column="0" Content="Название"/>
+                            <Label Grid.Row="1" Grid.Column="0" Content="Дата/Время"/>
+                            <Label Grid.Row="2" Grid.Column="0" Content="Цена"/>
+
+                            <TextBlock Grid.Row="0" Grid.Column="1"
+                       Text="{Binding Title}" TextWrapping="Wrap"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" 
+                       Text="{Binding Time}" TextWrapping="Wrap"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" 
+                       Text="{Binding Cost}" TextWrapping="Wrap"/>
+
+                            <Button FontSize="10" Content="Просмотр" Height="20"
+                    Grid.Row="3" Grid.ColumnSpan="2"
+                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Grid>
                     </Grid>
                 </DataTemplate>

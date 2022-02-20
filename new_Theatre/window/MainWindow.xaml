@@ -7,7 +7,12 @@
         xmlns:viewmodels="clr-namespace:new_Theatre.VeiwModels"
         xmlns:views="clr-namespace:new_Theatre.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="auto" Width="auto" MinWidth="792" MinHeight="450">
+        Title="MainWindow" 
+        Background="#FF252526"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight" 
+        MinHeight="460"
+        MinWidth="910">
     <Window.Resources>
         <DataTemplate x:Name="Main_screen_info" DataType="{x:Type viewmodels:Main_screen_info}">
             <views:Main_screen_info DataContext="{Binding}"/>
@@ -33,7 +38,7 @@
               MaxHeight="50"
               MinWidth="792"
               VerticalAlignment="Top" 
-              Background="#FF5F586C" 
+               
               Height="50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
@@ -43,21 +48,22 @@
 
             <StackPanel x:Name="profil" 
                         Orientation="Horizontal" 
-                        Background="#EA6A6A" 
+                        Background="#9B59C0" 
                         MouseDown="profil_MouseDown"
                         MinHeight="50" 
                         MaxHeight="50">
                 <Ellipse Height="30" Width="30" Fill="White" Margin="15,10,5,10" />
-                <Label x:Name="Login" Content="Name" Width="76" Margin="15,0,0,0"/>
+                <Label x:Name="Login" Content="Name"  Margin="15,0,0,0"/>
             </StackPanel>
 
             <Menu Grid.Column="2" Margin="15,0">
-                <MenuItem x:Name="Main_screen" Header="Main screen" Click="Main_screen_Click"/>
-                <MenuItem x:Name="Plays" Header="Plays" Click="Plays_Click"/>
-                <MenuItem x:Name="Adding_a_Play" Header="Adding a Play" Click="Adding_a_Play_Click"/>
+                <MenuItem x:Name="Main_screen" Header="Информация о театре" Click="Main_screen_Click"/>
+                <MenuItem x:Name="Plays" Header="Спектакли" Click="Plays_Click"/>
+                <MenuItem x:Name="Adding_a_Play" Header="Добавить спектакль" Click="Adding_a_Play_Click"/>
             </Menu>
         </Grid>
-        <ContentControl x:Name="MainContent" Grid.Row="2" Content="{Binding}"/>
+        <ContentControl x:Name="MainContent" Grid.Row="2" Content="{Binding}" 
+                       />
     </Grid>
 </Window>
     

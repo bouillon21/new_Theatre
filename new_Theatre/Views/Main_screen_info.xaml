@@ -5,19 +5,28 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:new_Theatre.Views"
              xmlns:prop="clr-namespace:new_Theatre.Resources"
-             
              mc:Ignorable="d"
              MinHeight="369"
              MinWidth="792"
              Height="auto"
              Width="auto">
-    <Grid Background="#79BDA5">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"
-                   Text="{x:Static prop:BaseResource.Description_theater}" FontSize="20"/>
-        <Image Source="/Resources/KAI.jpg" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15"/>
+        <TextBlock Grid.Column="2"
+                   FontSize="15"
+                   Foreground="White"
+                   TextWrapping="Wrap"
+                   Text="{x:Static prop:BaseResource.Description_theater}" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Cascadia Code"/> 
+        
+        <Image Source="/Resources/KAI.jpg" 
+               Margin="15"
+               MaxWidth="500"
+               MaxHeight="400"
+               HorizontalAlignment="Center" VerticalAlignment="Center" StretchDirection="Both" Stretch="Uniform"/> 
+
     </Grid>
 </UserControl>

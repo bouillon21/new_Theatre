@@ -1,4 +1,5 @@
-﻿using System;
+﻿using new_Theatre.Func;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,11 +25,16 @@ namespace new_Theatre.window
             InitializeComponent();
         }
 
+        DbBase DB = new DbBase();
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow win = new MainWindow(Login.Text);
-            win.Show();
-            this.Close();
+            if (!DB.util.CheckEmpty(GridInput) && DB.SingIn(Login.Text, Password.Password))
+            {
+                MainWindow win = new MainWindow(Login.Text);
+                win.Show();
+                this.Close();
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

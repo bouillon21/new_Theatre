@@ -1,4 +1,5 @@
-﻿using System;
+﻿using new_Theatre.Func;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,10 +24,16 @@ namespace new_Theatre.window
         {
             InitializeComponent();
         }
-
+        DbBase DB = new DbBase();
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!DB.util.CheckEmpty(GridInput))
+            {
+                DB.Reg(Login.Text, Password.Password, Phone.Text, Surname.Text, Name.Text, Patronymic.Text, (bool)Admin.IsChecked);
+                MainWindow win = new MainWindow(Login.Text);
+                this.Close();
+                win.Show();
+            }
         }
     }
 }

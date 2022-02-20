@@ -1,4 +1,5 @@
-﻿using System;
+﻿using new_Theatre.Func;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,6 +27,7 @@ namespace new_Theatre.Views
         }
 
         TheatreEntities db = new TheatreEntities();
+        Utils util = new Utils();
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -39,17 +41,17 @@ namespace new_Theatre.Views
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //if (Title.Text != "" && Data.Text != "" && Price.Text != "" && Description.Text != "")
-            //{
-            //    Performance play = new Performance(Title.Text, Convert.ToDateTime(Data.Text), Convert.ToInt32(Price.Text));
-            //    db.Performance.Add(play);
-            //    db.SaveChanges();
-            //    MessageBox.Show("done");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("no all data");
-            //}
+            string DataTime;
+            if (!util.CheckEmpty(GridInput))
+            {
+                DataTime = Data.Text + " " + Time.Text;
+                Performance newPlay = new Performance(
+                    Title.Text, Adres.Text, Convert.ToDateTime(DataTime),
+                        Convert.ToDouble(Price.Text), 1, Convert.ToInt32(number_places.Text));
+                db.Performance.Add(newPlay);
+                db.SaveChanges();
+                MessageBox.Show("done");
+            }
         }
     }
 }

@@ -15,8 +15,8 @@
             <RowDefinition Height="*" MinHeight="200"/>
             <RowDefinition Height="*" MinHeight="180"/>
         </Grid.RowDefinitions>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Grid>
+        <StackPanel  HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Grid x:Name="GridInput">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition Width="auto"/>

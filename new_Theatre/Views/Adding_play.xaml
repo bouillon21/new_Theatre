@@ -5,11 +5,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:new_Theatre.Views"
              mc:Ignorable="d" 
-             MinHeight="369"
-             MinWidth="792"
+             MinHeight="370"
+             MinWidth="900"
              Height="auto"
              Width="auto" >
-    <Grid Background="#79BDA5">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="auto"/>
@@ -22,7 +22,7 @@
             <Image Grid.Row="0" Width="200" Height="200" Source="/Resources/add_image.png"/>
             <Button Grid.Row="1" Content="Add play" Click="Button_Click_1"/>
         </Grid>
-        <Grid Grid.Column="1">
+        <Grid x:Name="GridInput" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -43,15 +43,15 @@
             <Label Grid.Row="0" Grid.Column="2" Content="Цена"/>
             <Label Grid.Row="3" Grid.Column="0" Content="Описание"/>
 
-            <TextBox x:Name="Title" Grid.Row="0" Grid.Column="1"  TextWrapping="Wrap" HorizontalAlignment="Left" MinWidth="230"/>
+            <TextBox x:Name="Title" Grid.Row="0" Grid.Column="1"  TextWrapping="Wrap" HorizontalAlignment="Left" />
             <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
                 <TextBox x:Name="Data" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left"
                          Text ="{Binding ElementName=calendar, Path=SelectedDate, StringFormat=dd/MM/yyyy, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
                 <Button Grid.Row="1" Grid.Column="1" Content="Выбрать дату" Click="Button_Click" HorizontalAlignment="Right" Width="100"/>
             </StackPanel>
-            <TextBox Grid.Row="1" Grid.Column="3" TextWrapping="Wrap"/>
-            <TextBox Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Left"/>
-            <TextBox Grid.Row="2" Grid.Column="3" TextWrapping="Wrap"/>
+            <TextBox x:Name="Time" Grid.Row="1" Grid.Column="3" TextWrapping="Wrap"/>
+            <TextBox x:Name="Adres" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" HorizontalAlignment="Left"/>
+            <TextBox x:Name="number_places" Grid.Row="2" Grid.Column="3" TextWrapping="Wrap"/>
             <TextBox x:Name="Price" Grid.Row="0" Grid.Column="3" Width="Auto" TextWrapping="Wrap"/>
             <TextBox x:Name="Description" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" Height="Auto" TextWrapping="Wrap" HorizontalAlignment="Left" Width="530"/>
         </Grid>

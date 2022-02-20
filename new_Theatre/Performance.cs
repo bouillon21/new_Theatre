@@ -19,7 +19,18 @@ namespace new_Theatre
         {
             this.PurchasedTickets = new HashSet<PurchasedTickets>();
         }
-    
+
+        public Performance(string title, string address, DateTime time, double cost, int iD_author, int number_places)
+        {
+            Title = title;
+            Address = address;
+            Time = time;
+            Cost = cost;
+            ID_author = iD_author;
+            Number_places = number_places;
+            this.PurchasedTickets = new HashSet<PurchasedTickets>();
+        }
+
         public int ID_performance { get; set; }
         public string Title { get; set; }
         public string Address { get; set; }

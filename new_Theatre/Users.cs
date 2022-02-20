@@ -9,6 +9,7 @@
 
 namespace new_Theatre
 {
+    using new_Theatre.Func;
     using System;
     using System.Collections.Generic;
     
@@ -19,7 +20,18 @@ namespace new_Theatre
         {
             this.PurchasedTickets = new HashSet<PurchasedTickets>();
         }
-    
+
+        public Users(string login, string password, string name, string firstName, string lastName, bool is_Admin)
+        {
+            Login = login;
+            Password = password;
+            Name = name;
+            FirstName = firstName;
+            LastName = lastName;
+            this.is_Admin = is_Admin;
+            this.PurchasedTickets = new HashSet<PurchasedTickets>();
+        }
+
         public int ID_user { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }

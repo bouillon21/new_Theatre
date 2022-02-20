@@ -68,6 +68,8 @@
     <Compile Include="Author.cs">
       <DependentUpon>TheatreModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Func\DbBase.cs" />
+    <Compile Include="Func\Utils.cs" />
     <Compile Include="Performance.cs">
       <DependentUpon>TheatreModel.tt</DependentUpon>
     </Compile>
