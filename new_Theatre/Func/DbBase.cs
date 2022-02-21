@@ -11,7 +11,7 @@ namespace new_Theatre.Func
     public class DbBase 
     {
         static TheatreEntities DB = new TheatreEntities();
-        public Utils util = new Utils(DB);
+        public Utils util = new Utils();
 
         public bool SingIn(string login, string pass)
         {
@@ -22,10 +22,18 @@ namespace new_Theatre.Func
             return false;
         }
 
+        public bool CheckRegistered(string login)
+        {
+            if (DB.Users.Where(r => r.Login == login).Count() == 0)
+                return true;
+            MessageBox.Show("Пользователь с таким логином уже есть", "Ошибка");
+            return false;
+        }
+
         public bool Reg(string login, string pass, string phone, string surname,
                         string name, string patronymic, bool admin)
         {
-            if (util.CheckRegistered(login))
+            if (CheckRegistered(login))
             {
                 Users user = new Users(login,pass, name, surname, patronymic, admin);
                 DB.Users.Add(user);

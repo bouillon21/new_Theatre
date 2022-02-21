@@ -42,7 +42,7 @@ namespace new_Theatre.Views
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             string DataTime;
-            if (!util.CheckEmpty(GridInput))
+            if (!util.CheckEmptyMas(GridInput))
             {
                 DataTime = Data.Text + " " + Time.Text;
                 Performance newPlay = new Performance(

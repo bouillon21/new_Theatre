@@ -25,9 +25,10 @@ namespace new_Theatre.window
             InitializeComponent();
         }
         DbBase DB = new DbBase();
+        Utils util = new Utils();  
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!DB.util.CheckEmpty(GridInput))
+            if (!util.CheckEmptyMas(GridInput))
             {
                 DB.Reg(Login.Text, Password.Password, Phone.Text, Surname.Text, Name.Text, Patronymic.Text, (bool)Admin.IsChecked);
                 MainWindow win = new MainWindow(Login.Text);

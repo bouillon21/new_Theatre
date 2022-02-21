@@ -26,10 +26,11 @@ namespace new_Theatre.window
         }
 
         DbBase DB = new DbBase();
+        Utils util = new Utils();
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!DB.util.CheckEmpty(GridInput) && DB.SingIn(Login.Text, Password.Password))
+            if (!util.CheckEmptyMas(GridInput) && DB.SingIn(Login.Text, Password.Password))
             {
                 MainWindow win = new MainWindow(Login.Text);
                 win.Show();

@@ -10,22 +10,8 @@ namespace new_Theatre.Func
 {
     public class Utils
     {
-        TheatreEntities DB;
-
-        public Utils(TheatreEntities dB)
-        {
-            DB = dB;
-        }
         public Utils()
         {
-        }
-
-        public bool CheckRegistered(string login)
-        {
-            if (DB.Users.Where(r => r.Login == login).Count() == 0)
-                return true;
-            MessageBox.Show("Пользователь с таким логином уже есть", "Ошибка");
-            return false;
         }
 
         private string retString(Object Element)
@@ -37,15 +23,20 @@ namespace new_Theatre.Func
             return null;
         }
 
-        public bool CheckEmpty(Grid one)
+        public bool CheckEmptyMas(Grid one)
         {
             foreach (var item in one.Children)
-                if (retString(item) == "")
-                {
-                    MessageBox.Show("Пустые поля", "Ошибка");
+                if(CheckEmpty(retString(item)))
                     return true;
-                }
             return false;
+        }
+
+        public bool CheckEmpty(string str)
+        {
+            if (str != "")
+                return false;
+            MessageBox.Show("Пустые поля", "Ошибка");
+            return true;
         }
     }
 }
