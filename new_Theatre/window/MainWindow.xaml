@@ -12,7 +12,7 @@
         WindowStartupLocation="CenterScreen"
         SizeToContent="WidthAndHeight" 
         MinHeight="460"
-        MinWidth="910">
+        MinWidth="910" Icon="/Resources/theater.png">
     <Window.Resources>
         <DataTemplate x:Name="Main_screen_info" DataType="{x:Type viewmodels:Main_screen_info}">
             <views:Main_screen_info DataContext="{Binding}"/>
